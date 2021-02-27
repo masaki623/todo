@@ -5,7 +5,6 @@ const todobutton = document.getElementById('send-button');
 const todovalue = document.getElementById('todo-input');
 const todolist = document.getElementById('todolist');
 
-
 const displayTodos = array => {
   todolist.textContent = '';
   array.forEach((task,number) => {
@@ -32,7 +31,6 @@ const displayTodos = array => {
     removeCell.appendChild(RemoveButton);
     
   })
-
 };
 
 todobutton.addEventListener('click', () => {
