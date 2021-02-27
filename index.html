@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Todoリスト</title>
+    </head>
+    <body>
+
+      <h1>Todoリスト</h1>
+      <form>
+      <label><input type="checkbox"> すべて</label>
+      <label><input type="checkbox" checked > 作業中</label>
+      <label><input type="checkbox"> 完了</label>
+      </form>
+
+      <div>
+    <table>
+    <theda>
+      <tr> 
+       <th>ID</th> <th>コメント</th> <th>状態</th>
+      </tr>
+    </theda>
+    <tbody id="todolist">
+
+    </tbody>
+  </table>
+  </div>
+
+  <div>
+    <h2>新規タスクの追加</h2>
+      <input type="text" id="todo-input">
+      <button id="send-button">作成</button>
+    </div>
+  </body>
+    <script src="todolist.js"></script>
+
+</html>
