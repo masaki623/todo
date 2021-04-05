@@ -32,9 +32,21 @@ const displayTodos = array => {
     RemoveButton.addEventListener('click', () => {
       array.splice(number,1);
       displayTodos(todos);
+
+    const WorkStatus = a => {
+      array[number].status = a;
+    };
+
+    WorkButton.addEventListener('click',() => {
+      if(WorkButton.value = '作業中'){
+        WorkStatus('完了');
+      } else {
+        WorkStatus('作業中');
+      }
+    });
     });
     
-  })
+  });
 };
 
 const addTodos = task => {
