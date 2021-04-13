@@ -29,12 +29,9 @@ const displayTodos = array => {
     RemoveButton.value = '削除'
     removeCell.appendChild(RemoveButton);
 
-    RemoveButton.addEventListener('click', () => {
-      array.splice(number,1);
-      displayTodos(todos);
-
     const WorkStatus = a => {
       array[number].status = a;
+      WorkButton.value = a;
     };
 
     WorkButton.addEventListener('click',() => {
@@ -42,9 +39,12 @@ const displayTodos = array => {
         WorkStatus('完了');
       } else {
         WorkStatus('作業中');
-      }
-    });
-    });
+      }});
+
+    RemoveButton.addEventListener('click', () => {
+      array.splice(number,1);
+      displayTodos(todos);
+ });
     
   });
 };
