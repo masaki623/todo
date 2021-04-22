@@ -35,7 +35,7 @@ const displayTodos = array => {
     };
 
     WorkButton.addEventListener('click',() => {
-      if(WorkButton.value = '作業中'){
+      if(WorkButton.value === '作業中'){
         WorkStatus('完了');
       } else {
         WorkStatus('作業中');
