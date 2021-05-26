@@ -5,6 +5,10 @@ const todo = [];
 const todobutton = document.getElementById('send-button');
 const todovalue = document.getElementById('todo-input');
 const todolist = document.getElementById('todolist');
+const radioBtn = document.getElementsByName('status');
+const radioBtnAll =  document.getElementById('radioAll');
+const radioBtnWorking = document.getElementById('radioWorking');
+const radioBtnDone = document.getElementById('radioDone');
 
 const displayTodos = array => {
   todolist.textContent = '';
@@ -68,5 +72,25 @@ todobutton.addEventListener('click', () => {
   displayTodos(todos);
 }});
 
+const radioFilter = () => {
+  if (radioBtnAll.checked) {
+  return displayTodos(todos);
+  } else if (radioBtnWorking.checked) {
+  const doingTodos = todos.filter(element => {
+  return todos.status === '作業中'
+  })
+  return displayTodos(doingTodos);
+  } else if (radioBtnDone.checked) {
+  const doneTodos = todos.filter(element => {
+  return todos.status === '完了'
+  })
+  return displayTodos(doneTodos);
+  }};
+  
+  radioBtn.forEach((status,number) => {
+    radioBtn[number].addEventListener('click',() => {
+      radioFilter();
+    });
+  });
 
 
