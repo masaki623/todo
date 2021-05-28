@@ -76,14 +76,14 @@ const radioFilter = () => {
   if (radioBtnAll.checked) {
   return displayTodos(todos);
   } else if (radioBtnWorking.checked) {
-  const doingTodos = todos.filter(element => {
-  return todos.status === '作業中'
-  })
+  const doingTodos = todos.filter(element => 
+  element.status === '作業中'
+  )
   return displayTodos(doingTodos);
   } else if (radioBtnDone.checked) {
-  const doneTodos = todos.filter(element => {
-  return todos.status === '完了'
-  })
+  const doneTodos = todos.filter(element =>
+  element.status === '完了'
+  )
   return displayTodos(doneTodos);
   }};
   
