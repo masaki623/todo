@@ -9,6 +9,7 @@ const radioBtn = document.getElementsByName('status');
 const radioBtnAll =  document.getElementById('radioAll');
 const radioBtnWorking = document.getElementById('radioWorking');
 const radioBtnDone = document.getElementById('radioDone');
+let id = 0;
 
 const displayTodos = array => {
   todolist.textContent = '';
@@ -22,7 +23,7 @@ const displayTodos = array => {
     const removeCell = newRow.insertCell();
   
     todolist.insertRow();
-    indexCell.textContent = number;
+    indexCell.textContent = array[number].id;
     taskCell.textContent = array[number].task;
     
     WorkButton.type = 'button';
@@ -47,6 +48,9 @@ const displayTodos = array => {
 
     RemoveButton.addEventListener('click', () => {
       array.splice(number,1);
+      array.forEach((value, index) => {
+        todos[index].id = index;
+        });     
       displayTodos(todos);
  });
     
@@ -56,7 +60,8 @@ const displayTodos = array => {
 const addTodos = task => {
   const todo = {
     task: task,
-    status: '作業中'
+    status: '作業中',
+    id: id
   };
   todos.push(todo);
   todovalue.value = '';
@@ -68,6 +73,7 @@ todobutton.addEventListener('click', () => {
     todovalue.value = '';
   } else {
   const task = todovalue.value;
+  id++;
   addTodos(task);
   displayTodos(todos);
 }});
