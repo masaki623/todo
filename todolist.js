@@ -48,10 +48,11 @@ const displayTodos = array => {
 
     RemoveButton.addEventListener('click', () => {
       array.splice(number,1);
-      array.forEach((value, index) => {
-        todos[index].id = index;
-        });     
+      for (let i = 1; i < id; i++) {
+        todos[i].id = i
+      };   
       displayTodos(todos);
+      let id = todos.length;  
  });
     
   });
