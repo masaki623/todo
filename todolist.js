@@ -47,13 +47,15 @@ const displayTodos = array => {
       }});
 
     RemoveButton.addEventListener('click', () => {
-      array.splice(number,1);
-      for (let i = 1; i < id; i++) {
-        todos[i].id = i
-      };   
-      displayTodos(todos);
-      let id = todos.length;  
- });
+      array.splice(number, 1);
+      id = 1
+      array.forEach((task) => {
+        task.id = id
+        id++
+      })
+      displayTodos(array);
+      id = id - 1
+   });
     
   });
 };
